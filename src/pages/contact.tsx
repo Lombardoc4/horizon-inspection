@@ -3,10 +3,6 @@ import { FAQ } from "./faq";
 
 const ContactPage = () => {
 
-    const handleSubmit = (data: any) => {
-        console.log('data', data);
-    }
-
     return (
         <section style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4em'}}>
             <div>
