@@ -12,7 +12,7 @@ function Layout({children}: {children?: JSX.Element | JSX.Element[]}) {
       <Nav/>
       <HeaderBanner/>
     </header>
-    <div className="container flex-1">
+    <div className="flex-1">
       {children}
       <Outlet/>
     </div>

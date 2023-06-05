@@ -24,8 +24,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    font-weight: 500;
-    color: #646cff;
+    font-weight: 600;
+    color: #ffffff;
+    
     text-decoration: inherit;
   }
   a:hover {
@@ -48,6 +49,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 3.2em;
     line-height: 1.1;
   }
+  
+  h2 {
+    font-size: 2.4em;
+    line-height: 1.1;
+    
+  }
 
   button {
     border-radius: 8px;
@@ -56,34 +63,38 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
+    background-color: #0e5797;
+    color: #ffffff;
     cursor: pointer;
     transition: border-color 0.25s;
+    box-shadow: 0 0 1.5em -0.5em rgba(0, 0, 0, 0.5);
   }
   button:hover {
     border-color: #646cff;
   }
   button:focus,
   button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    outline: 4px auto #747bff;
   }
 
   @media (prefers-color-scheme: light) {
     :root {
-      color: #213547;
+      color: #000000;
       background-color: #f1f1f1;
+    }
+    a {
+      color: rgb(14, 87, 151);
     }
     a:hover {
       color: #747bff;
     }
     button {
-      background-color: #f9f9f9;
     }
   }
 
-  section {
-    padding: 4em 0;
-  }
+  /* section {
+    padding: 2em 0;
+  } */
 
   .img-container{
     width: 100%;
@@ -104,20 +115,24 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 3em 2em;
     /* text-align: center; */
 
     p {
       width: 100%;
       max-width: 50ch;
+      font-size: 1.5em;
     }
+    
+  }
+    
 
     .card-container{
-      padding: 4em 0;
+      padding: 2em 0;
     }
 
     .card-heading{
-      padding-bottom: 2em;
+      margin-bottom: 1em;
     }
 
     .card-group{
@@ -125,14 +140,18 @@ const GlobalStyle = createGlobalStyle`
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2em;
 
+        &.inspection-cards {
+          text-align: center;
+        }
     }
 
     .card {
       background-color: #ffffff;
+      color:  #000000;
+      box-shadow: 0 0 1.5em -0.5em rgba(0, 0, 0, 0.25);
       padding: 2em;
       border-radius: 0.5em;
     }
-  }
 
   .flex-1{
       flex: 1;

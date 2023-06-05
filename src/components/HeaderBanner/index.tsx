@@ -19,13 +19,21 @@ const ImgBg = styled.div`
   button{
     margin-top: 1em;
   }
+  
+  h1 {
+    font-size: 4em;
+  }
+  
+  h2 {
+    line-height: 1.1;
+  }
 `;
 
 
 const HeaderCopy = {
   home: {
-    title: 'Horizion Inspections',
-    subtitle: 'Passing inspection across the tri-state'
+    title: 'Horizon',
+    subtitle: 'Professional Inspections & Consulting Services'
   },
   services: {
     title: 'Services',
@@ -74,7 +82,9 @@ export const HeaderBanner = () => {
         <div className="container">
           <h1>{content.title}</h1>
           <h2>{content.subtitle}</h2>
-          <button>Request a Quote</button>
+          { content !== HeaderCopy.contact && 
+            <button>Request a Quote</button>
+          }
         </div>
       </ImgBg>
     )

@@ -1,11 +1,11 @@
 import styled from "styled-components"
-import { ReactComponent as Logo } from "../../assets/building.svg"
 import USDOH from '../../assets/usdoh-cert.png'
 
 
 const StyledFooter = styled.footer`
-    background-color: #213547;
+    background-color: #0e5797;
     color: #ffffff;
+    padding-bottom: calc(2em + 60px);
 
     .container {
         display: grid;
@@ -26,9 +26,6 @@ export  const Footer = () => {
             <div className="container">
 
                 <div>
-                    {/* <div className="img-container"> */}
-                        <Logo style={{width: '3em'}}/>
-                    {/* </div> */}
                     <p>973-555-5555</p>
                     <p>HorizonInspection@gmail.com</p>
                     <p>Location</p>

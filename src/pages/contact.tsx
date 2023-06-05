@@ -1,10 +1,19 @@
+import { styled } from "styled-components";
 import { Form } from "../components/Form"
 import { FAQ } from "./faq";
+
+
+const ContactSection = styled.section`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4em;
+    padding: 2em;
+`
 
 const ContactPage = () => {
 
     return (
-        <section style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4em'}}>
+        <ContactSection>
             <div>
 
                 <h2>We provide free consultations</h2>
@@ -14,7 +23,7 @@ const ContactPage = () => {
             <div>
                 <FAQ/>
             </div>
-        </section>
+        </ContactSection>
     )
 }
 
