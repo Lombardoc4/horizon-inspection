@@ -8,7 +8,8 @@ interface AccordianProps  {
 }
 
 const StyledAccordian = styled.div`
-    background-color: #0e5797;;
+    background-color: #0e5797;
+    color: #ffffff;
     padding: 1em;
     margin: 0 0 1em 0;
     border-radius: 0.5em;

@@ -83,7 +83,7 @@ const GlobalStyle = createGlobalStyle`
       background-color: #f1f1f1;
     }
     a {
-      color: rgb(14, 87, 151);
+      color: #ffffff;
     }
     a:hover {
       color: #747bff;
