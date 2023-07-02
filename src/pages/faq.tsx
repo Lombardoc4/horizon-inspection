@@ -9,26 +9,18 @@ interface QAProps {
 
 const QnA : QAProps[] = [
     {
-        title: 'Question 1',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi temporibus distinctio aliquam quos, laborum repellendus qui maiores odio iste! Id commodi unde, pariatur dignissimos eligendi vitae. Nesciunt ratione consequatur sunt?'
+        title: 'How will we receive a list of deficiencies that were found?',
+        content: 'An all inclusive report will be provided at the end of the inspection with locations, detailed descriptions, and photos of all deficiencies.'
     },
     {
-        title: 'Question 2',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi temporibus distinctio aliquam quos, laborum repellendus qui maiores odio iste! Id commodi unde, pariatur dignissimos eligendi vitae. Nesciunt ratione consequatur sunt?'
-    },
-    {
-        title: 'Question 3',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi temporibus distinctio aliquam quos, laborum repellendus qui maiores odio iste! Id commodi unde, pariatur dignissimos eligendi vitae. Nesciunt ratione consequatur sunt?'
-    },
-    {
-        title: 'Question 4',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi temporibus distinctio aliquam quos, laborum repellendus qui maiores odio iste! Id commodi unde, pariatur dignissimos eligendi vitae. Nesciunt ratione consequatur sunt?'
+        title: 'What makes Horizon the most efficient and reliable inspection team for public and multi-family housing?',
+        content: 'Our inspectors are up-to-date on all HUD protocols and have extensive experience in the industry. We are able to provide an accurate comprehensive report in a timely manner, allowing you to focus on the necessary corrections that will elevate your property score.'
     }
 ]
 
 const FAQSection = styled.section`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
     gap: 2em;
     padding: 2em;
 `
@@ -46,11 +38,8 @@ export const FAQ = () => {
 
 const FAQPage = () => {
     return (
-        <FAQSection>
-            <div>
-                <FAQ/>
-
-            </div>
+        <FAQSection className="container">
+            <div><FAQ/></div>
             <div style={{borderRadius: '0.5em', overflow: 'hidden'}}>
                 <h2>Services</h2>
                 <ServiceCards/>

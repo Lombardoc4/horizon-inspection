@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Logo from "../../assets/horizon-inspection-logo-circle.png";
 // import useMediaQuery from "../../utils/useMediaQuery";
 
 interface StyledNavBarProps {
@@ -9,7 +10,7 @@ interface StyledNavBarProps {
 
 const StyledNavBar = styled.div<StyledNavBarProps>`
     width: 100%;
-    background-color: #0e5797;
+    padding: 0.75em 0;
     
     .container {
         min-height: 60px;
@@ -24,11 +25,21 @@ const StyledNavBar = styled.div<StyledNavBarProps>`
         gap: 2em;
     }
     
+    .heading {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        font-size: 1.5em;
+    }
+    
     .mobile-heading {
         display: none;
     }
 
     @media screen and (max-width: 768px){
+        
+            background-color: #ffffff;
+            color: #0e5797;
             position: fixed;
             top: 100%;
             left: 0;
@@ -49,17 +60,30 @@ const StyledNavBar = styled.div<StyledNavBarProps>`
             nav {
                 padding-top: 2em;
                 flex-direction: column;
+                
+                button {
+                    width: 100%;
+                }
             }
             
             a {
-                font-size: 1.5em;
+                font-size: 1.25em;
                 text-align: center;
+                color: inherit;
             }
-            
+            .heading {
+                display: none;
+            }
             .mobile-heading {
                 display: block;
                 text-align: center;
-                margin-bottom: 2em;
+                /* margin-bottom: 2em; */
+                
+                img {
+                    border-radius: 50%;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                    margin-bottom: 1em;
+                }
             }
     }
 `;
@@ -76,6 +100,8 @@ const MobileNavButton = styled.button`
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    
+    font-size: 2em;
     
     @media screen and (min-width: 768px){
         display: none;
@@ -115,20 +141,28 @@ const Nav = () => {
         
             <StyledNavBar open={open}>
                 <div className="container">
-                    
-                    <div className="mobile-heading">
-                        <p>Logo Goes HERE</p>
-                        <p>Professional Inspections & Consulting Services</p>
+                    <div className="heading">
+                        <img src={Logo} alt="Horizon Inspection Logo" width='50'/>
+                        <NavLink className='nav-link' to="/">
+                            Horizon
+                        </NavLink>
                     </div>
                     
-                    <NavLink className='nav-link' to="/">
-                        Horizon
-                    </NavLink>
+                    <div className="mobile-heading">
+                        <img src={Logo} alt="Horizon Inspection Logo" width='150'/>
+                        <p>
+                            <NavLink className='nav-link' to="/">
+                                Horizon
+                            </NavLink>
+                        </p>
+                        <p>Professional Inspections &{'\u00A0'}Consulting Services</p>
+                    </div>
+                    
 
                     <nav>
-                        <NavLink to="/services" className='nav-link'>Services</NavLink>
-                        <NavLink to="/contact" className='nav-link'>Contact</NavLink>
-                        <NavLink to="/faq" className='nav-link'>FAQ</NavLink>
+                        <NavLink to="/services" className='nav-link'><button>Services</button></NavLink>
+                        <NavLink to="/contact" className='nav-link'><button>Contact</button></NavLink>
+                        <NavLink to="/faq" className='nav-link'><button>FAQ</button></NavLink>
                     </nav>
                 </div>
                 

@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-:root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  :root {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+  
+    font-family: 'Poppins', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
@@ -22,38 +24,45 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
-
-  a {
-    font-weight: 600;
-    color: #ffffff;
-    
-    text-decoration: inherit;
-  }
-  a:hover {
-    color: #535bf2;
-  }
-
+  
   #root {
     margin: 0;
-    /* display: flex; */
-    /* place-items: center; */
     min-width: 300px;
     min-height: 100vh;
 
     display: flex;
     flex-direction: column;
   }
-
-
+  
+  
+  
   h1 {
     font-size: 3.2em;
+    margin-bottom: 0.25em;
     line-height: 1.1;
   }
   
   h2 {
     font-size: 2.4em;
+    margin-bottom: 0.25em;
     line-height: 1.1;
-    
+  }
+  
+  h3 {
+    font-size: 1.75em;
+  }
+
+  ul {
+    margin: 1em 0 0 1em;
+  }
+  
+  a {
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: inherit;
+    &:hover {
+      color: #535bf2;
+    }
   }
 
   button {
@@ -68,13 +77,13 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     transition: border-color 0.25s;
     box-shadow: 0 0 1.5em -0.5em rgba(0, 0, 0, 0.5);
-  }
-  button:hover {
-    border-color: #646cff;
-  }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto #747bff;
+    &:hover {
+      border-color: #646cff;
+    }
+    &:focus,
+    &:focus-visible {
+      outline: 4px auto #747bff;
+    }
   }
 
   @media (prefers-color-scheme: light) {
@@ -82,19 +91,26 @@ const GlobalStyle = createGlobalStyle`
       color: #000000;
       background-color: #f1f1f1;
     }
+    
     a {
       color: #ffffff;
-    }
-    a:hover {
-      color: #747bff;
-    }
-    button {
+      &:hover {
+        color: #747bff;
+      }
     }
   }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3em 1em;
 
-  /* section {
-    padding: 2em 0;
-  } */
+    p {
+      width: 100%;
+      max-width: 50ch;
+    }
+  }
 
   .img-container{
     width: 100%;
@@ -110,22 +126,16 @@ const GlobalStyle = createGlobalStyle`
       object-fit: cover;
     }
   }
-
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3em 2em;
-    /* text-align: center; */
-
-    p {
-      width: 100%;
-      max-width: 50ch;
-      font-size: 1.5em;
-    }
-    
+  
+  .blue-bg {
+    background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(14,87,151,1) 33%,  rgba(14,87,151,1) 100%);
+    background-color: #0e5797;
+    color: #ffffff;
   }
-    
+
+
+  /* Card Containers */
+  
 
     .card-container{
       padding: 2em 0;
@@ -138,10 +148,11 @@ const GlobalStyle = createGlobalStyle`
     .card-group{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2em;
+      gap: 3em;
 
         &.inspection-cards {
           text-align: center;
+          font-size: 1.5em;
         }
     }
 
@@ -160,6 +171,19 @@ const GlobalStyle = createGlobalStyle`
     textarea{
       resize: none;
     }
+    
+    @media (min-width: 768px) {
+      .container {
+        padding: 4em 2em;
+      }
+      
+      #services {
+        p {
+          font-size: 1.25em;
+        }
+      }
+    }
+      
  `
 
  export default GlobalStyle;

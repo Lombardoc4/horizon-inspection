@@ -28,6 +28,7 @@ export const StyledForm = styled.form`
 
     p{
         margin: 0;
+        font-size: initial;
     }
 
     input, select, textarea {
@@ -66,9 +67,8 @@ const FormFields: FormFieldProps[] = [
         placeholder: 'Property type',
         type: 'select',
         options: [
-            { title: 'Property 1', value: 'prop1' },
-            { title: 'Property 2', value: 'prop2' },
-            { title: 'Property 3', value: 'prop3' }
+            { title: 'Public Housing', value: 'public-housing' },
+            { title: 'Multi-family', value: 'multi-family' },
         ],
 		required: true,
     },
@@ -163,7 +163,7 @@ const validateForm = (values: any) => {
 	});
 
 
-	  return errors;
+	return errors;
 }
 
 const defaultInputs =
